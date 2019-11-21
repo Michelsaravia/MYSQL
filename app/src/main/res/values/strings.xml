@@ -1,4 +1,14 @@
 <resources>
-    <string name="app_name">MYSQL</string>
+    <string name="app_name">CRUDMySQL</string>
     <string name="action_settings">Settings</string>
+
+    <string name="listarticulos">Lista Spinner</string>
+    <string name="listarticulos1">Lista ListView</string>
+
+
+    <string name="salir">Salir</string>
+    <string name="usuario"><u>Registrarme ahora</u></string>
+    <string name="pass"><u>¿Se te olvidó tu contraseña?</u></string>
+    <string name="register"><u><b><i>Copyright</i></b></u></string>
+    <string name="bienvenido_a">BIENVENIDO/A</string>
 </resources>
