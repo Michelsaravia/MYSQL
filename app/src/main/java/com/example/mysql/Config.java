@@ -1,4 +1,4 @@
-package com.example.crudmysql;
+package com.example.mysql;
 
 public class Config {
 
