@@ -273,6 +273,13 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+    public void limpiarDatos(){
+        et_codigo.setText(null);
+        et_descripcion.setText(null);
+        et_precio.setText(null);
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
