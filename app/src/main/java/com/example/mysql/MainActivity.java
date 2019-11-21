@@ -18,6 +18,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -73,14 +74,48 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        ///y esto para pantalla completa (oculta incluso la barra de estado)
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        et_codigo = (EditText) findViewById(R.id.et_codigo);
+        et_descripcion = (EditText) findViewById(R.id.et_descripcion);
+        et_precio = (EditText) findViewById(R.id.et_precio);
+        btn_guardar = (Button) findViewById(R.id.btn_guardar);
+        btn_consultaCodigo = (Button) findViewById(R.id.btn_consultaCodigo);
+        btn_consultaDescripcion = (Button) findViewById(R.id.btn_consultaDescripcion);
+        btn_eliminar = (Button) findViewById(R.id.btn_eliminar);
+        btn_actualizar = (Button) findViewById(R.id.btn_actualizar);
+        //tv_resultado = (TextView) findViewById(R.id.tv_resultado);
+
+
+
+
+        /******************************************************************/
+        //BLOQUE DE CÓDIGO PARA MOSTRAR DATOS DE LA BUSQUEDA//
+        try {
+            Intent intent = getIntent();
+            Bundle bundle = intent.getExtras();
+            if (bundle != null) {
+
+                senal = bundle.getString("senal");
+                codigo = bundle.getString("codigo");
+                descripcion = bundle.getString("descripcion");
+                precio = bundle.getString("precio");
+                if (senal.equals("1")) {
+                    et_codigo.setText(codigo);
+                    et_descripcion.setText(descripcion);
+                    et_precio.setText(precio);
+                    //finish();
+                }else if(senal.equals("2")){
+
+                }
             }
-        });
+        }catch (Exception e){
+
+        }
     }
 
     @Override
